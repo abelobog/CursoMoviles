@@ -1,5 +1,5 @@
 //Archivos
-function subirFoto(foto){
+function subirFoto(foto) {
 
     var options = new FileUploadOptions();
     options.fileKey = "archivo";
@@ -17,9 +17,9 @@ function subirFoto(foto){
     ft.upload(foto, "http://igitsoft.com/pgtest.php", function (r) {
         //console.log("Code = " + r.responseCode);
         //console.log("Response = " + r.response);
-        if (r.response==1){
-            navigator.notification.confirm('Datos subidos Correctamente', function(btn){
-                switch(btn){
+        if (r.response == 1) {
+            navigator.notification.confirm('Datos subidos Correctamente', function (btn) {
+                switch (btn) {
                     case 1:
                         navigator.notification.vibrate(500);
                         break;
@@ -28,11 +28,11 @@ function subirFoto(foto){
                         break;
                 }
                 window.location.href = '#page';
-            },'Confirmación','Vibrar, Beep, Cancelar');
-        }else{
-            navigator.notification.alert('Error al subir foto', null, 'Error','Aceptar');
+            }, 'Confirmación', 'Vibrar, Beep, Cancelar');
+        } else {
+            navigator.notification.alert('Error al subir foto', null, 'Error', 'Aceptar');
         //console.log("Sent = " + r.bytesSent);
-    }, function (error) {
+    } , function (error) {
         alert("An error has occurred: Code = " + error.code);
         //console.log("upload error source " + error.source);
         //console.log("upload error target " + error.target);
