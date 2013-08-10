@@ -1,7 +1,8 @@
 //Eventos
 $(document).ready(function(){
 	document.addEventListener("deviceready", function(){
-		window.location.href = "#login";
+        if (!isLogin)
+            window.location.href = "#login";
 		$('#regSend').tap(function(){
 			var nom = $('#regNom').val();
 			var mail = $('#regEmail').val();

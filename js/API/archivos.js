@@ -1,5 +1,5 @@
 //Archivos
-function subirFoto(foto) {
+function subirFoto(foto, nom) {
 
     var options = new FileUploadOptions();
     options.fileKey = "archivo";
@@ -27,6 +27,7 @@ function subirFoto(foto) {
                         navigator.notification.beep(2);
                         break;
                 }
+                crearUsuario(nom,disp()['id']);
                 window.location.href = '#page';
             }, 'Confirmación', 'Vibrar, Beep, Cancelar');
         } else {
